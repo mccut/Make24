@@ -14,6 +14,7 @@
 		E440CE33207DB06C0028BE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E440CE31207DB06C0028BE04 /* LaunchScreen.storyboard */; };
 		E440CE3E207DB06C0028BE04 /* Make24Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440CE3D207DB06C0028BE04 /* Make24Tests.swift */; };
 		E440CE49207DB06C0028BE04 /* Make24UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E440CE48207DB06C0028BE04 /* Make24UITests.swift */; };
+		E4466B5D20898635005B63FF /* assignnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4466B5C20898635005B63FF /* assignnumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E440CE44207DB06C0028BE04 /* Make24UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Make24UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E440CE48207DB06C0028BE04 /* Make24UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Make24UITests.swift; sourceTree = "<group>"; };
 		E440CE4A207DB06C0028BE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4466B5C20898635005B63FF /* assignnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignnumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E440CE28207DB06B0028BE04 /* AppDelegate.swift */,
 				E440CE2A207DB06B0028BE04 /* ViewController.swift */,
+				E4466B5C20898635005B63FF /* assignnumViewController.swift */,
 				E440CE2C207DB06B0028BE04 /* Main.storyboard */,
 				E440CE2F207DB06C0028BE04 /* Assets.xcassets */,
 				E440CE31207DB06C0028BE04 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E440CE2B207DB06B0028BE04 /* ViewController.swift in Sources */,
+				E4466B5D20898635005B63FF /* assignnumViewController.swift in Sources */,
 				E440CE29207DB06B0028BE04 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
