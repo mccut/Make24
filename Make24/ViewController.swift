@@ -34,6 +34,9 @@ public struct Stack<T> {
     }
 }
 
+var skip = 0
+var attempt = 1
+
 class ViewController: UIViewController{
 
     @IBOutlet weak var numbtn1: UIButton!
@@ -56,8 +59,6 @@ class ViewController: UIViewController{
     
     var menuShowing = false
     var solution : String?
-    var skip = 0
-    var attempt = 1
     var success = 0
     var time = Timer()
     var secound = 0
@@ -65,6 +66,9 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        equationTV.layer.borderWidth = 1
+        equationTV.layer.borderColor = UIColor.black.cgColor
+        
         startTimer()
         reset(genNum: assign, resetTime: true)
     }
@@ -75,11 +79,11 @@ class ViewController: UIViewController{
     }
     
     @IBAction func Showme(_ sender: UIBarButtonItem) {
+        skip += 1
         if (solution != nil) {
             createAlert(title: "Show Me", message: solution)
         } else {
-            createAlert(title: "Show Me", message: "No solution for these numbers")
-            skip += 1
+            createAlert(title: "Show Me", message: "Sorry, there are actually no solutions")
         }
     }
     
@@ -90,8 +94,7 @@ class ViewController: UIViewController{
         //CREATING ON BUTTON
         alert.addAction(UIAlertAction(title: "Next Puzzle", style: UIAlertActionStyle.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
-            print ("OK")
-            
+            print ("Next")
             self.reset(genNum: true, resetTime: true)
         }))
         
@@ -108,10 +111,16 @@ class ViewController: UIViewController{
                 num2 = String(arc4random_uniform(9) + 1)
                 num3 = String(arc4random_uniform(9) + 1)
                 num4 = String(arc4random_uniform(9) + 1)
-                print ("Generated nums: " + num1 + ", " + num2)
-                print ("Generated nums: " + num3 + ", " + num4)
+                print ("Generated nums: \(num1), \(num2), \(num3), \(num4)")
                 solution = getSolution(n1: num1, n2: num2, n3: num3, n4: num4)
             } while solution == nil
+        } else {
+            solution = getSolution(n1: num1, n2: num2, n3: num3, n4: num4)
+        }
+        if solution != nil {
+            print ("Solution: \(String(describing: solution))")
+        } else {
+            print ("No Solution")
         }
         
         numbtn1.setTitle(num1, for: .normal)
@@ -315,8 +324,7 @@ class ViewController: UIViewController{
         let postExpression = convertToPostFix(input: equationTV.text)
         let result = calculate(input: postExpression)
         if bingo(res: result) {
-            //createAlert(title: "Succeed!", message: "Bingo! \(equationTV.text) = 24", action: "Next Puzzle")
-            createAlert(title: "Succeed!", message: "Bingo! \(equationTV.text) = 24")
+            createAlert(title: "Succeed!", message: "Bingo! \(equationTV.text!) = 24")
             success += 1
             successTF.text = String(success)
             attempt = 1
@@ -427,6 +435,10 @@ class ViewController: UIViewController{
     
     @IBAction func clearPressed(_ sender: UIBarButtonItem) {
         equationTV.text = ""
+        numbtn1.isEnabled = true
+        numbtn2.isEnabled = true
+        numbtn3.isEnabled = true
+        numbtn4.isEnabled = true
     }
 }
 

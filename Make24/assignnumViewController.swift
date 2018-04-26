@@ -56,6 +56,8 @@ class assignnumViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBAction func assignNum(_ sender: UIButton) {
         print ("assigne numbers!")
         assign = false
+        skip += 1
+        attempt = 1
     }
     
     /*
