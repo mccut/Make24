@@ -36,7 +36,6 @@ public struct Stack<T> {
 
 class ViewController: UIViewController{
 
-    @IBOutlet weak var leadingConstrain: NSLayoutConstraint!
     @IBOutlet weak var numbtn1: UIButton!
     @IBOutlet weak var numbtn2: UIButton!
     @IBOutlet weak var numbtn3: UIButton!
@@ -60,13 +59,13 @@ class ViewController: UIViewController{
     var skip = 0
     var attempt = 1
     var success = 0
-    var started = false
     var time = Timer()
     var secound = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        startTimer()
         reset(genNum: assign, resetTime: true)
     }
     
@@ -101,11 +100,6 @@ class ViewController: UIViewController{
     
     func reset (genNum:Bool, resetTime:Bool)
     {
-        if resetTime {
-            started = false
-            startTimer()
-        }
-        
         equationTV.text = ""
         
         if genNum {
@@ -134,6 +128,10 @@ class ViewController: UIViewController{
         successTF.text = String(success)
         skipTF.text = String(skip)
         attemptTF.text = String(attempt)
+        
+        if resetTime {
+            secound = 0
+        }
     }
     
     func startTimer() {
@@ -420,6 +418,15 @@ class ViewController: UIViewController{
     
     func isOperator(op: Character) -> Bool {
         return (op == "+") || (op == "-") || (op == "*") || (op == "/")
+    }
+    
+    @IBAction func skipPressed(_ sender: UIBarButtonItem) {
+        skip += 1
+        reset(genNum: true, resetTime: true)
+    }
+    
+    @IBAction func clearPressed(_ sender: UIBarButtonItem) {
+        equationTV.text = ""
     }
 }
 

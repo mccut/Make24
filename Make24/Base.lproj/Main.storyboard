@@ -27,9 +27,15 @@
                                         <leftBarButtonItems>
                                             <barButtonItem systemItem="stop" id="4Gf-81-3gU">
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <connections>
+                                                    <action selector="clearPressed:" destination="BYZ-38-t0r" id="FQc-yl-R0X"/>
+                                                </connections>
                                             </barButtonItem>
                                             <barButtonItem systemItem="fastForward" id="y4Q-9V-4uG">
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <connections>
+                                                    <action selector="skipPressed:" destination="BYZ-38-t0r" id="wvx-rC-vbM"/>
+                                                </connections>
                                             </barButtonItem>
                                         </leftBarButtonItems>
                                         <rightBarButtonItems>
@@ -49,7 +55,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="center" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="time" borderStyle="line" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ni8-jT-bc8">
+                            <textField opaque="NO" contentMode="center" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="0:00" borderStyle="line" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ni8-jT-bc8">
                                 <rect key="frame" x="99" y="34" width="97" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
