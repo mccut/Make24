@@ -61,25 +61,13 @@ class ViewController: UIViewController{
     var attempt = 1
     var success = 0
     var started = false
-    var startTime = ProcessInfo.processInfo.systemUptime
+    var time = Timer()
+    var secound = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         reset(genNum: assign, resetTime: true)
-    }
-
-    @IBAction func OpenMenu(_ sender: UIBarButtonItem) {
-        if (menuShowing) {
-            leadingConstrain.constant = -200
-        } else {
-            leadingConstrain.constant = 0
-            
-            UIView.animate(withDuration: 0.3,  animations: {
-                self.view.layoutIfNeeded()
-            })
-        }
-        menuShowing = !menuShowing
     }
     
     override func didReceiveMemoryWarning() {
@@ -115,8 +103,7 @@ class ViewController: UIViewController{
     {
         if resetTime {
             started = false
-            startTime = ProcessInfo.processInfo.systemUptime
-            print (startTime)
+            startTimer()
         }
         
         equationTV.text = ""
@@ -147,6 +134,21 @@ class ViewController: UIViewController{
         successTF.text = String(success)
         skipTF.text = String(skip)
         attemptTF.text = String(attempt)
+    }
+    
+    func startTimer() {
+        time = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounter() {
+        secound += 1
+        let min = Int(secound/60)
+        let sec = secound - min * 60
+        if sec < 10 {
+            timeTF.text = "\(min):0\(sec)"
+        }else{
+            timeTF.text = "\(min):\(sec)"
+        }
     }
     
     func getSolution(n1 : String, n2 : String, n3 : String, n4 : String) -> String? {
