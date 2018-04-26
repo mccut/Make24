@@ -12,6 +12,7 @@ var num1: String!
 var num2: String!
 var num3: String!
 var num4: String!
+var assign = true
 
 class assignnumViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
 {
@@ -20,7 +21,7 @@ class assignnumViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var numpicker3: UIPickerView!
     @IBOutlet weak var numpicker4: UIPickerView!
     
-    let nums = ["0","1","2","3","4","5","6","7","8","9"]
+    let nums = ["1","2","3","4","5","6","7","8","9"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -52,7 +53,11 @@ class assignnumViewController: UIViewController, UIPickerViewDataSource, UIPicke
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func assignNum(_ sender: UIButton) {
+        print ("assigne numbers!")
+        assign = false
+    }
+    
     /*
     // MARK: - Navigation
 

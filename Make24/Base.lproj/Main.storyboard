@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,256 +16,277 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Make24" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTO-u9-eE5">
-                                <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eTO-u9-eE5">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem id="0bt-cf-gZO">
-                                        <barButtonItem key="leftBarButtonItem" title="Menu" image="menu" id="XI1-Zp-1qU">
-                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <connections>
-                                                <action selector="OpenMenu:" destination="BYZ-38-t0r" id="wcp-P1-TlQ"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem title="Skip" image="skip" id="y4Q-9V-4uG">
+                                        <leftBarButtonItems>
+                                            <barButtonItem systemItem="stop" id="4Gf-81-3gU">
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </barButtonItem>
-                                            <barButtonItem title="Clear" image="clear" id="HTb-58-2AK">
+                                            <barButtonItem systemItem="fastForward" id="y4Q-9V-4uG">
                                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="compose" id="HTb-58-2AK">
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <connections>
+                                                    <segue destination="EgL-F4-K5R" kind="show" id="FsA-kb-wP5"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="search" id="M88-Aw-0do">
+                                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <connections>
+                                                    <action selector="Showme:" destination="BYZ-38-t0r" id="ecE-Qc-7yE"/>
+                                                </connections>
                                             </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="center" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="time" borderStyle="line" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ni8-jT-bc8">
-                                <rect key="frame" x="99" y="102" width="97" height="33"/>
+                                <rect key="frame" x="99" y="34" width="97" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6c-bJ-vbn">
-                                <rect key="frame" x="8" y="108" width="88" height="21"/>
+                                <rect key="frame" x="8" y="40" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="center" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="success" borderStyle="line" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zgu-oD-4SA">
-                                <rect key="frame" x="99" y="156" width="97" height="33"/>
+                                <rect key="frame" x="99" y="88" width="97" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Succeeded" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLf-Kz-zXD">
-                                <rect key="frame" x="8" y="162" width="88" height="21"/>
+                                <rect key="frame" x="8" y="94" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="center" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="attempt" borderStyle="line" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="jjk-z3-RqT">
-                                <rect key="frame" x="270" y="102" width="97" height="33"/>
+                                <rect key="frame" x="270" y="34" width="97" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Attempt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR4-NJ-FeM">
-                                <rect key="frame" x="200" y="108" width="72" height="21"/>
+                                <rect key="frame" x="200" y="40" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="center" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="top" text="skip" borderStyle="line" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="HD7-QL-eWI">
-                                <rect key="frame" x="270" y="156" width="97" height="33"/>
+                                <rect key="frame" x="270" y="88" width="97" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skipped" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hci-ZK-N6g">
-                                <rect key="frame" x="200" y="162" width="72" height="21"/>
+                                <rect key="frame" x="200" y="94" width="72" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="equation" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW4-sm-v1J">
-                                <rect key="frame" x="16" y="212" width="343" height="167"/>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rW4-sm-v1J">
+                                <rect key="frame" x="16" y="144" width="343" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96899727784148648" green="0.99047444006060892" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qy-e9-GYH">
-                                <rect key="frame" x="16" y="212" width="343" height="167"/>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5qy-e9-GYH">
+                                <rect key="frame" x="16" y="144" width="343" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfi-Ff-mOR">
-                                <rect key="frame" x="16" y="523" width="80" height="98"/>
+                                <rect key="frame" x="16" y="400" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="+" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="plusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aYp-ar-Rqr"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goO-in-V17">
-                                <rect key="frame" x="16" y="643" width="80" height="98"/>
+                                <rect key="frame" x="16" y="506" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="(" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="leftPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IW0-6o-i5s"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZm-AV-73n">
-                                <rect key="frame" x="104" y="523" width="80" height="98"/>
+                                <rect key="frame" x="104" y="400" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="-" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="minusPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mUR-BL-sSa"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gB4-Aa-H9B">
-                                <rect key="frame" x="104" y="643" width="80" height="98"/>
+                                <rect key="frame" x="104" y="506" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title=")" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="rightPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gft-kd-v0Q"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbD-Vs-LKI">
-                                <rect key="frame" x="191" y="523" width="80" height="98"/>
+                                <rect key="frame" x="191" y="400" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="*" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="mulitPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPp-6y-1bA"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x5-tt-Wxk">
-                                <rect key="frame" x="191" y="643" width="80" height="98"/>
+                                <rect key="frame" x="191" y="506" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="&lt;-" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="delPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kZD-sf-fXn"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkx-1d-CBs">
-                                <rect key="frame" x="279" y="523" width="80" height="98"/>
+                                <rect key="frame" x="279" y="400" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="/" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="dividePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vPB-BT-8bf"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHp-k1-Q0D">
-                                <rect key="frame" x="279" y="643" width="80" height="98"/>
+                                <rect key="frame" x="279" y="506" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Gg-fQ-0N5"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3X-UT-ZR2">
-                                <rect key="frame" x="16" y="404" width="80" height="98"/>
+                                <rect key="frame" x="16" y="294" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="num1" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="num1Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zoo-LP-r5E"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkB-Ua-lOr">
-                                <rect key="frame" x="104" y="404" width="80" height="98"/>
+                                <rect key="frame" x="104" y="294" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="num2" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="num2Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efe-tB-V2Q"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMw-Nb-ZOI">
-                                <rect key="frame" x="192" y="404" width="80" height="98"/>
+                                <rect key="frame" x="192" y="294" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="num3" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="num3Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nql-Es-B4n"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4g-8N-GjV">
-                                <rect key="frame" x="279" y="404" width="80" height="98"/>
+                                <rect key="frame" x="279" y="294" width="80" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="num4" backgroundImage="rect">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="num4Pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OmE-ba-zCc"/>
+                                </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODt-GQ-oCl">
-                                <rect key="frame" x="-200" y="79" width="200" height="733"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIy-vg-wvk">
-                                        <rect key="frame" x="23" y="21" width="82" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Show Me"/>
-                                        <connections>
-                                            <action selector="Showme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JY4-eb-Ake"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ET5-7R-xIl">
-                                        <rect key="frame" x="23" y="76" width="144" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <state key="normal" title="Assign Numbers"/>
-                                        <connections>
-                                            <segue destination="EgL-F4-K5R" kind="show" id="tRN-OA-99e"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.69803921568627447" green="0.84313725490196079" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="ylc-BZ-XIZ"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="eTO-u9-eE5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0I6-cW-DLp"/>
-                            <constraint firstAttribute="bottom" secondItem="ODt-GQ-oCl" secondAttribute="bottom" id="43U-fj-Q5Y"/>
-                            <constraint firstItem="eTO-u9-eE5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5xc-Rx-eAD"/>
-                            <constraint firstItem="eTO-u9-eE5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="35" id="6BB-Iy-xfb"/>
-                            <constraint firstItem="ODt-GQ-oCl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-200" id="McA-gw-c3c"/>
-                            <constraint firstItem="ODt-GQ-oCl" firstAttribute="top" secondItem="eTO-u9-eE5" secondAttribute="bottom" id="v37-rh-dO5"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="leadingConstrain" destination="McA-gw-c3c" id="lDc-vv-1we"/>
+                        <outlet property="attemptTF" destination="jjk-z3-RqT" id="aGS-gt-QJ4"/>
+                        <outlet property="delbtn" destination="6x5-tt-Wxk" id="ALd-1O-Wub"/>
+                        <outlet property="dividebtn" destination="xkx-1d-CBs" id="fQe-7S-RZT"/>
+                        <outlet property="donebtn" destination="PHp-k1-Q0D" id="80c-iM-Ra1"/>
+                        <outlet property="equationTV" destination="rW4-sm-v1J" id="IRO-5t-xsx"/>
+                        <outlet property="leftbtn" destination="goO-in-V17" id="klK-gr-RRr"/>
+                        <outlet property="minusbtn" destination="lZm-AV-73n" id="ciQ-A7-dIz"/>
+                        <outlet property="multibtn" destination="KbD-Vs-LKI" id="Jub-ws-P6j"/>
                         <outlet property="numbtn1" destination="Q3X-UT-ZR2" id="GXT-EA-FGN"/>
                         <outlet property="numbtn2" destination="pkB-Ua-lOr" id="GD8-Ie-6Ph"/>
                         <outlet property="numbtn3" destination="bMw-Nb-ZOI" id="214-So-JFC"/>
                         <outlet property="numbtn4" destination="R4g-8N-GjV" id="BYD-zt-aWC"/>
+                        <outlet property="plusbtn" destination="gfi-Ff-mOR" id="NHk-lG-gPo"/>
+                        <outlet property="rightbtn" destination="gB4-Aa-H9B" id="JqV-GK-j3p"/>
+                        <outlet property="skipTF" destination="HD7-QL-eWI" id="FCf-Rb-PQB"/>
+                        <outlet property="successTF" destination="Zgu-oD-4SA" id="pv3-Ic-RSd"/>
+                        <outlet property="timeTF" destination="ni8-jT-bc8" id="Cxj-RR-tPU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="28.817733990147783"/>
+            <point key="canvasLocation" x="24.800000000000001" y="28.335832083958024"/>
         </scene>
         <!--Assignnum View Controller-->
         <scene sceneID="cys-yk-6JF">
             <objects>
                 <viewController id="EgL-F4-K5R" customClass="assignnumViewController" customModule="Make24" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p8f-tw-p2N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xq5-fs-2hI">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Fl-Yg-5B4">
-                                        <rect key="frame" x="37" y="237" width="69" height="186"/>
+                                        <rect key="frame" x="37" y="181" width="69" height="186"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="dataSource" destination="EgL-F4-K5R" id="DHf-WH-Lur"/>
@@ -273,7 +294,7 @@
                                         </connections>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnJ-Cr-N3h">
-                                        <rect key="frame" x="114" y="237" width="69" height="186"/>
+                                        <rect key="frame" x="114" y="181" width="69" height="186"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="dataSource" destination="EgL-F4-K5R" id="PPb-jV-APq"/>
@@ -281,7 +302,7 @@
                                         </connections>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFy-dZ-bW2">
-                                        <rect key="frame" x="191" y="237" width="69" height="186"/>
+                                        <rect key="frame" x="191" y="181" width="69" height="186"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="dataSource" destination="EgL-F4-K5R" id="utT-Yi-W5l"/>
@@ -289,7 +310,7 @@
                                         </connections>
                                     </pickerView>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UeS-kt-yDI">
-                                        <rect key="frame" x="268" y="237" width="69" height="186"/>
+                                        <rect key="frame" x="268" y="181" width="69" height="186"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <outlet property="dataSource" destination="EgL-F4-K5R" id="Hrz-Di-t0J"/>
@@ -297,13 +318,15 @@
                                         </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-Qu-U5E">
-                                        <rect key="frame" x="139" y="431" width="96" height="66"/>
+                                        <rect key="frame" x="139" y="375" width="96" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.69803921570000005" green="0.84313725490000002" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Done"/>
                                         <connections>
+                                            <action selector="assignNum:" destination="asS-CW-yj5" eventType="touchUpInside" id="5Pw-lO-Yk3"/>
+                                            <action selector="assignNum:" destination="EgL-F4-K5R" eventType="touchUpInside" id="Gqz-ba-gWi"/>
                                             <segue destination="BYZ-38-t0r" kind="show" id="12k-0g-haD"/>
                                         </connections>
                                     </button>
@@ -322,14 +345,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sQ-9l-d7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="asS-CW-yj5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="799.20000000000005" y="28.817733990147783"/>
+            <point key="canvasLocation" x="799.20000000000005" y="28.335832083958024"/>
         </scene>
     </scenes>
     <resources>
-        <image name="clear" width="35" height="35"/>
-        <image name="menu" width="49" height="13"/>
         <image name="rect" width="650" height="400"/>
-        <image name="skip" width="48" height="31"/>
     </resources>
 </document>
