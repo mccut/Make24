@@ -101,9 +101,11 @@ class ViewController: UIViewController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
         //CREATING ON BUTTON
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Next Puzzle", style: UIAlertActionStyle.default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
             print ("OK")
+            
+            self.reset(genNum: true, resetTime: true)
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -313,16 +315,15 @@ class ViewController: UIViewController{
         let postExpression = convertToPostFix(input: equationTV.text)
         let result = calculate(input: postExpression)
         if bingo(res: result) {
-            createAlert(title: "Succeed!", message: "Bingo! \(equationTV.text) = 24", action: "Next Puzzle")
+            //createAlert(title: "Succeed!", message: "Bingo! \(equationTV.text) = 24", action: "Next Puzzle")
+            createAlert(title: "Succeed!", message: "Bingo! \(equationTV.text) = 24")
             success += 1
             successTF.text = String(success)
             attempt = 1
             attemptTF.text = String(attempt)
         }else {
-            let banner = NotificationBanner(title: title, subtitle: subtitle, style: .success)
+            let banner = NotificationBanner(title: "Incorrect. Please try again!", style: .warning)
             banner.show()
-            /*let snackbar = TTGSnackbar(message: "Incorrect. Please try again!", duration: .middle)
-            snackbar.show()*/
         }
     }
     
